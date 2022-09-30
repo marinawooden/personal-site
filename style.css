@@ -6,7 +6,6 @@
 
 body {
   font-family: 'Inter Tight', sans-serif;
-  background-color: rgb(244, 244, 234);
   height: 100vh;
   width: 100%;
   background-repeat: no-repeat;
@@ -25,8 +24,20 @@ nav {
   border-bottom: 1px solid
 }
 
+h1, h2 {
+  font-family: 'Poller One', cursive;
+}
+
+h3 {
+  font-family: 'IBM Plex Serif', serif;
+}
+
 img {
   border: 1px solid;
+}
+
+body, .board {
+  background-color: rgb(244, 244, 234);
 }
 
 .bg-tertiary {
@@ -36,4 +47,18 @@ img {
 .board {
   border: 1px solid;
   border-radius: 15px
+}
+
+.bottom-page {
+  position: absolute;
+  top: calc(100vh - 3em);
+}
+
+.bottom-page, .wiggle span {
+  z-index: -1;
+}
+
+.wiggle span {
+  position: relative;
+  transition: .5s top;
 }
