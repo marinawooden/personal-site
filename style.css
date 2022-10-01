@@ -1,7 +1,8 @@
 :root {
   --bs-primary-rgb: 244, 244, 234;
-  --bs-secondary-rgb: 113, 126, 195;
+  --bs-secondary-rgb: 27, 27, 27;
   --bs-light-rgb: 255, 255, 255;
+  --bs-link-color: #7cbcb5;
 }
 
 body {
@@ -34,10 +35,16 @@ h3 {
 
 img {
   border: 1px solid;
+  max-width: 300px;
 }
 
-body, .board {
+body {
   background-color: rgb(244, 244, 234);
+}
+
+.board {
+  background-color: rgb(27, 27, 27);
+  color: rgb(244, 244, 234);
 }
 
 .bg-tertiary {
@@ -54,11 +61,60 @@ body, .board {
   top: calc(100vh - 3em);
 }
 
-.bottom-page, .wiggle span {
-  z-index: -1;
+nav {
+  z-index: 2;
+}
+
+.fade-in {
+  opacity: 0;
+  filter: blur(5px);
+  transition: filter 1000ms;
+}
+
+.fade-in.scrolled {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+.pop-in {
+  transform: scale(0);
+  transition: transform 1000ms;
+}
+
+.pop-in.scrolled {
+  transform: scale(1);
+}
+
+.slide-in {
+  transform: translateX(-100%);
+  transition: transform 1000ms;
+}
+
+.slide-in.scrolled {
+  transform: translateX(0);
 }
 
 .wiggle span {
   position: relative;
   transition: .5s top;
+}
+
+#current-events {
+  scroll-margin-top: 7em;
+}
+
+@media (min-width: 992px) {
+  .workboard {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .board {
+    align-self: flex-start;
+    width: 90%;
+  }
+
+  .board:nth-of-type(2n) {
+    align-self: flex-end;
+  }
 }

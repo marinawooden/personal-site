@@ -8,6 +8,31 @@
 
   function init() {
     wiggle(qsa(".wiggle"));
+    makeScroll(qsa(".scroll"));
+  }
+
+  function makeScroll(elems) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("scrolled");
+        } else {
+          e.target.classList.remove("scrolled");
+        }
+      });
+    })
+
+    elems.forEach((e) => observer.observe(e));
+
+    elems.forEach((e, i) => {
+      // console.log(e.nextSibling);
+      const nextPop = e.nextElementSibling;
+      if (nextPop) {
+        if (nextPop.classList.contains("pop-in")) {
+          nextPop.style.transitionDelay += i * 100 + "ms";
+        }
+      }
+    });
   }
 
   function wiggle(text) {
