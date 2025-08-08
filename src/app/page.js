@@ -82,7 +82,7 @@ const Home = () => {
           <h1 className={styles.title}>
             Marina Wooden
           </h1>
-          <Image width='200' height='200' src='/img/ihatethispicturegoshineedanewone.jpg' alt='a headshot of me that I hate' />
+          <Image width='200' height='200' src='https://raw.githubusercontent.com/marinawooden/personal-site/refs/heads/main/public/img/ihatethispicturegoshineedanewone.jpg' alt='a headshot of me that I hate' />
           <div className={styles.socials}>
             <p className='overinflated-emoji'>📍</p>
             <p>Paris, Île-de-France</p>
